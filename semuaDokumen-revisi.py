@@ -12,9 +12,9 @@
 # -------------register lib-------------
 # import excel
 import openpyxl
-getSheets = openpyxl.load_workbook('../dataset_TA/AI_EDOM_ganjil_18_19_siap_sidang.xlsx')
+getSheets = openpyxl.load_workbook('../dataset_TA/AI_EDOM_ganjil_18_19_siap_sidang-revisi.xlsx')
 from openpyxl import load_workbook
-dataset = load_workbook('../dataset_TA/AI_EDOM_ganjil_18_19_siap_sidang.xlsx', data_only=True)
+dataset = load_workbook('../dataset_TA/AI_EDOM_ganjil_18_19_siap_sidang-revisi.xlsx', data_only=True)
 eval_all = dataset['eval-all']
 dosen_1 = dataset['DOSEN-1']
 dosen_2 = dataset['DOSEN-2']
@@ -65,9 +65,9 @@ def importExcelDataSet(selectSheet):
             break
         else:
             hasil.append(selectSheet.cell(row=i, column=7).value)
-            labelManual.append(selectSheet.cell(row=i, column=11).value)
+            labelManual.append(selectSheet.cell(row=i, column=8).value)
     
-    labelManual2 = selectSheet.cell(row=2, column=16).value
+    labelManual2 = selectSheet.cell(row=2, column=10).value
 
     return hasil, labelManual, labelManual2
 

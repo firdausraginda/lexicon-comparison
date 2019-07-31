@@ -11,7 +11,7 @@
 # -------------register lib-------------
 # import excel
 from openpyxl import load_workbook
-dataset = load_workbook('../dataset_TA/AI_EDOM_ganjil_18_19_siap_sidang.xlsx', data_only=True)
+dataset = load_workbook('../dataset_TA/AI_EDOM_ganjil_18_19_siap_sidang-revisi.xlsx', data_only=True)
 dosen_1 = dataset['DOSEN-1']
 dosen_2 = dataset['DOSEN-2']
 dosen_3 = dataset['DOSEN-3']
@@ -54,7 +54,7 @@ def importExcelDataSet(selectedSheet):
             break
         else:
             hasil.append(selectedSheet.cell(row=i, column=7).value)
-            labelManual.append(selectedSheet.cell(row=i, column=11).value)
+            labelManual.append(selectedSheet.cell(row=i, column=8).value)
     return hasil, labelManual
 
 # -------------stopword removal-------------
